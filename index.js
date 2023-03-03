@@ -5,6 +5,7 @@ const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const mongoSanitize = require('express-mongo-sanitize');
+const session = require('express-session');
 
 const homeRoutes = require('./routes/home');
 const dbUrl = "mongodb+srv://admin-akhil:akhiliffco@cluster0.9j6lv.mongodb.net/?retryWrites=true&w=majority"
@@ -31,6 +32,19 @@ const store = MongoDBStore.create({
         secret
     }
 });
+
+const sessionConfig = {
+    store,
+    name: 'session',
+    secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      expires: Date.now() + (1000 * 60 * 60 * 24 * 7),
+      maxAge: (1000 * 60 * 60 * 24 * 7)
+    }
+}  
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
