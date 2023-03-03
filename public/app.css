@@ -5,3 +5,8 @@
   .bg-cover {
     background-size: cover !important;
   }
+
+  .login,
+  .image {
+    min-height: 100vh;
+  }

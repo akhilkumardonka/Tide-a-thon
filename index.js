@@ -8,6 +8,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const session = require('express-session');
 
 const homeRoutes = require('./routes/home');
+const hospitalRoutes = require('./routes/hospital');
 const dbUrl = "mongodb+srv://admin-akhil:akhiliffco@cluster0.9j6lv.mongodb.net/?retryWrites=true&w=majority"
 const secret = "thisshouldbeabettersecret!"
 
@@ -59,6 +60,7 @@ app.use(express.json());
 app.use(mongoSanitize());
   
 app.use('/', homeRoutes);
+app.use('/hospitals', hospitalRoutes);
   
 const port = process.env.PORT || 8080;
   

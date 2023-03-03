@@ -1,0 +1,82 @@
+<% layout('layouts/hospitalBase') %>
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
+
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <h3 class="display-4">Portal Login</h3>
+                            <p class="text-muted mb-4">Sahayata App</p>
+                            <form>
+                                <div class="form-group mb-3">
+                                    <input id="inputEmail" type="email" placeholder="Business Email ID" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                </div>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                    <label for="customCheck1" class="custom-control-label">Remember password</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- End -->
+
+            </div>
+        </div><!-- End -->
+
+        <!-- The image half -->
+        <div class="col-md-6 bg-dark text-white">
+            <div class="login d-flex align-items-center py-5">
+
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <h3 class="display-4">Registration</h3>
+                            <p class="mb-4">Sahayata App</p>
+                            <form method="POST" action="/hospitals/new">
+                                <div class="mb-2">
+                                  <label for="name" class="form-label">Hospital Name</label>
+                                  <input type="text" class="form-control" id="name" name="name">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username">
+                                  </div>
+                                <div class="mb-2">
+                                    <label for="exampleInputEmail1" class="form-label">Business Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input id="password" type="password" placeholder="Password" required="" class="form-control" name="password">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="contact" class="form-label">Contact</label>
+                                    <input type="text" class="form-control" id="contact" name="contact">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="city" name="city">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                              </form>
+                        </div>
+                    </div>
+                </div><!-- End -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
