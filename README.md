@@ -7,15 +7,16 @@ Codebase for proposed idea
 
 ###################### Install Dependencies ############
 1. Create Mongo Atlas Account, get **DB_URL**
-2. Save the above variables path in .env file in parent directory
+2. Save the above variable path in .env file in parent directory
+3. Also add a **SECRET** variable in .env file
 
-Navigate into project parent directory 
+Navigate into project parent directory and start express server
 ```
 npm install
 nodemon index.js
 ```
 
-Navigate into mlserver directory and start ML Model API
+On another terminal, Navigate into mlserver directory and start ML Model API
 ```
 cd ./mlserver
 python app.py
