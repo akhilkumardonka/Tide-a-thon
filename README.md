@@ -1,6 +1,12 @@
 # Tide-a-thon
 Codebase for proposed idea
 
+###################### Presentation ####################
+Link : [PPT](https://iith-my.sharepoint.com/:p:/g/personal/ee22mtech02002_iith_ac_in/ESXtHHoYtY9IvUkVnlmeN7QBLRf6XQNMQfxGOktBCS_OJA?e=xUEKJP)
+
+###################### Video of Demo ####################
+Link : Soon will be updated
+
 ###################### Installation ####################
 1. Node Js (to run javscript outside browser) from official website | Verify by typing "**node**" in terminal >> Node REPL Terminal opens up
 2. Any Code Editor (VS Code)

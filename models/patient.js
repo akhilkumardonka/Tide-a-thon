@@ -41,6 +41,10 @@ const patientSchema = new Schema({
     },
     children :{
         type: String
+    },
+    cnpl_request:{
+        type: Boolean,
+        default: false
     }
 });
 

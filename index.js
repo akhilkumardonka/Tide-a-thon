@@ -16,6 +16,7 @@ const session = require('express-session');
 
 const homeRoutes = require('./routes/home');
 const hospitalRoutes = require('./routes/hospital');
+const patientRoutes = require('./routes/patient');
 const dbUrl = process.env.DB_URL
 const secret = process.env.SECRET;
 
@@ -75,6 +76,7 @@ app.use(mongoSanitize());
   
 app.use('/', homeRoutes);
 app.use('/hospitals', hospitalRoutes);
+app.use('/patients', patientRoutes);
   
 const port = process.env.PORT || 8080;
   
