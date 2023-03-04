@@ -1,0 +1,1 @@
+{"_id":{"$oid":"6401fcf55908a5a7cff9bbd0"},"age":"23","bmi":"23","name":"Sourish","contact":"9340146989","email":"cwedfwe@gmail.com","sex_male":"1","smoker_yes":"1","region":"southwest","hospital":{"$oid":"6401ec5440f1ff1dedca1800"}}

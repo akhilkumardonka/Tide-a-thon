@@ -6,6 +6,9 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const mongoSanitize = require('express-mongo-sanitize');
 const session = require('express-session');
+// const passport = require('passport')
+// const LocalStrategy = require('passport-local');
+// const flash = require('connect-flash');
 
 const homeRoutes = require('./routes/home');
 const hospitalRoutes = require('./routes/hospital');
@@ -13,6 +16,7 @@ const dbUrl = "mongodb+srv://admin-akhil:akhiliffco@cluster0.9j6lv.mongodb.net/?
 const secret = "thisshouldbeabettersecret!"
 
 const MongoDBStore = require("connect-mongo");
+const Hospital = require("./models/hospital");
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -56,8 +60,14 @@ app.use(session(sessionConfig));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
 app.use(mongoSanitize());
+// app.use(flash());
+// app.use(passport.initialize())
+// app.use(passport.session())
+// passport.use(new LocalStrategy(Hospital.authenticate()));
+
+// passport.serializeUser(Hospital.serializeUser());
+// passport.deserializeUser(Hospital.deserializeUser());
   
 app.use('/', homeRoutes);
 app.use('/hospitals', hospitalRoutes);

@@ -24,4 +24,4 @@ const HospitalSchema = new Schema({
   
   HospitalSchema.plugin(passportLocalMongoose);
   
-  module.exports = mongoose.model('Hospital', HospitalSchema);
+  module.exports = mongoose.model('hospital', HospitalSchema);

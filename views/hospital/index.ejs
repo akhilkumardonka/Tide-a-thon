@@ -13,12 +13,12 @@
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Portal Login</h3>
                             <p class="text-muted mb-4">Sahayata App</p>
-                            <form>
+                            <form method="POST" action="/hospitals">
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="email" placeholder="Business Email ID" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="inputEmail" name="email" type="email" placeholder="Business Email ID" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input id="customCheck1" type="checkbox" checked class="custom-control-input">

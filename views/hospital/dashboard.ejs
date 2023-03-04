@@ -1,0 +1,185 @@
+<% layout('layouts/hospitalBase') %>
+
+<div class="container-fluid">
+<div class="row no-gutter">
+
+<div class="col-md-6 bg-light">
+    <div class="login d-flex align-items-center py-5">
+
+        <!-- Demo content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <h3 class="display-4 pt-4">Old Patient</h3>
+                    <form method="POST" action="/hospitals/<%= hospital._id %>/patient">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter Patient Name" name="patientName">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                        </div>
+                    </form>
+                    <% if (patient) { %>
+                        
+                        <div class="row g-3 py-3">
+                            <div class="col-md-6">
+                              <label for="inputName" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="inputName" name="patient[name]" disabled placeholder="<%= patient[0].name %>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputContact" class="form-label">Contact</label>
+                                <input type="text" class="form-control" id="inputContact" name="patient[contact]" disabled placeholder="<%= patient[0].contact %>">
+                              </div>
+                            <div class="col-12">
+                              <label for="inputAddress" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="inputAddress" placeholder="example@email.com" name="patient[email]" disabled placeholder="<%= patient[0].email %>">
+                            </div>
+                            <div class="col-md-6">
+                              <label for="inputState" class="form-label">Age</label>
+                              <input type="text" class="form-control" id="inputState" name="patient[age]" disabled placeholder="<%= patient[0].age %>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputgender" class="form-label">Gender</label>
+                                <select class="form-select" name="patient[sex_male]" disabled>
+                                    <option selected><%= patient[0].sex_male %></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                  <label for="inputBMI" class="form-label">BMI</label>
+                                  <input type="text" class="form-control" id="inputBMI" name="patient[bmi]" disabled placeholder="<%= patient[0].bmi %>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputSmoker" class="form-label">Smoker?</label>
+                                <select class="form-select" name="patient[smoker_yes]" disabled>
+                                    <option selected><%= patient[0].smoker_yes %></option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputState" class="form-label">Children</label>
+                                <input type="text" class="form-control" id="inputState" name="patient[children]" placeholder="<%= patient[0].children %>" disabled>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputRegion" class="form-label">Region</label>
+                                <select class="form-select" name="patient[region]" disabled>
+                                    <option selected><%= patient[0].region %></option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-12">
+                              <a class="btn btn-primary" href="/hospitals/<%= hospital._id %>/patient/<%= patient[0]._id %>/cnpl">Calculate CNPL Estimate</a>
+                            </div>
+                            <% if (insurance_cost) { %>
+                            <div class="col-12">
+                                <label for="inputState" class="form-label">CNPL Estimate</label>
+                                <input type="text" class="form-control" id="inputState" placeholder="<%= insurance_cost %>" disabled>
+                            </div>
+                            <% } %> -->
+                        </div>
+                          
+                    <% } %>
+                </div>
+            </div>
+        </div><!-- End -->
+
+    </div>
+</div>
+
+<div class="col-md-6 bg-light">
+    <div class="login d-flex align-items-center py-5">
+
+        <!-- Demo content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <h3 class="display-6 pt-4">Care Now Pay Later</h3>
+                    
+                    <% if (patient) { %>
+                        
+                        <div class="row g-3 py-3">
+                            <div class="col-12">
+                              <a class="btn btn-primary" href="/hospitals/<%= hospital._id %>/patient/<%= patient[0]._id %>/cnpl">Calculate CNPL Estimate</a>
+                            </div>
+                            <% if (insurance_cost) { %>
+                            <div class="col-12">
+                                <label for="inputState" class="form-label">CNPL Estimate</label>
+                                <input type="text" class="form-control" id="inputState" placeholder="<%= insurance_cost %>" disabled>
+                            </div>
+                            <% } %>
+                        </div>
+                          
+                    <% } %>
+                </div>
+            </div>
+        </div><!-- End -->
+
+    </div>
+</div>
+
+<!-- <div class="col-md-6 bg-gray">
+    <div class="login d-flex align-items-center py-5">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-7 mx-auto">
+                    <h3 class="display-4">New Patient</h3>
+                        <form class="row g-3 py-3" method="POST" action="/hospitals/<%= hospital._id %>/patient/new">
+                            <div class="col-md-6">
+                              <label for="inputName" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="inputName" name="patient[name]">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputContact" class="form-label">Contact</label>
+                                <input type="text" class="form-control" id="inputContact" name="patient[contact]">
+                              </div>
+                            <div class="col-12">
+                              <label for="inputAddress" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="inputAddress" placeholder="example@email.com" name="patient[email]">
+                            </div>
+                            <div class="col-md-6">
+                              <label for="inputState" class="form-label">Age</label>
+                              <input type="text" class="form-control" id="inputState" name="patient[age]">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputgender" class="form-label">Gender</label>
+                                <select class="form-select" name="patient[sex_male]">
+                                    <option selected>Select</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                  <label for="inputBMI" class="form-label">BMI</label>
+                                  <input type="text" class="form-control" id="inputBMI" name="patient[bmi]">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputSmoker" class="form-label">Smoker?</label>
+                                <select class="form-select" name="patient[smoker_yes]">
+                                    <option selected>Select</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputRegion" class="form-label">Region</label>
+                                <select class="form-select" name="patient[region]">
+                                    <option selected>Select</option>
+                                    <option value="northwest">Northwest</option>
+                                    <option value="northeast">Northeast</option>
+                                    <option value="southwest">Southwest</option>
+                                    <option value="southeast">Southeast</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputState" class="form-label">Children</label>
+                                <input type="text" class="form-control" id="inputState" name="patient[children]">
+                            </div>
+                            <div class="col-12">
+                              <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+</div>
+</div>
