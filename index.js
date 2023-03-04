@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== "production"){
+    require('dotenv').config();
+}
+
 const express = require("express");
 const path = require('path');
 const app = express()
@@ -12,8 +16,8 @@ const session = require('express-session');
 
 const homeRoutes = require('./routes/home');
 const hospitalRoutes = require('./routes/hospital');
-const dbUrl = "mongodb+srv://admin-akhil:akhiliffco@cluster0.9j6lv.mongodb.net/?retryWrites=true&w=majority"
-const secret = "thisshouldbeabettersecret!"
+const dbUrl = process.env.DB_URL
+const secret = process.env.SECRET;
 
 const MongoDBStore = require("connect-mongo");
 const Hospital = require("./models/hospital");
